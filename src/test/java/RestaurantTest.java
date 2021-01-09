@@ -72,4 +72,12 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+    @Test
+    public void getTotalCost_should_return_correct_amount_based_on_selected_items(){
+        List<Item> tempList = new ArrayList<Item>();
+        tempList.add(new Item("Sweet corn soup",119));
+        tempList.add(new Item("Vegetable lasagne",269));
+        int totalCost = restaurant.getTotalCost(tempList);
+        assertEquals(388,totalCost);
+    }
 }
